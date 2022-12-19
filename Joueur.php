@@ -17,5 +17,70 @@ class Joueur
         $this->_Pays->ADDJoueur($this);
         $this->_Carriere = [];
     }
+
+    public function ADDCarriere($Carriere)
+    {
+        $this->_Carriere[] = $Carriere;
+    }
+
+    public function getNom(): string
+    {
+        return $this->_Nom;
+    }
+
+    public function getPrenom(): string
+    {
+        return $this->_Prenom;
+    }
+
+    public function getDateNaissance(): string
+    {
+        return $this->_DateNaissance;
+    }
+
+    public function getPays(): string
+    {
+        return $this->_Pays;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
