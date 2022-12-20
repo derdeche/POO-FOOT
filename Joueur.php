@@ -53,10 +53,10 @@ class Joueur
 
     public function to__String()
     {
-        return "Le nom du Joueur: ". $this->_nom." prénom: ".$this->_prenom. "Date de Naissance: ".$this->_dateNaisance."Age: ".$this->_afficherAge();
+        return "Le nom du Joueur: ". $this->getNom()." prénom: ".$this->getPrenom(). "Date de Naissance: ".$this->getdateNaisance()."Age: ".$this->_afficherAge();
     } 
 
-    
+
 
 
 
