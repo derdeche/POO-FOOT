@@ -46,7 +46,7 @@ public function to__String()
 public function afficherInfoEquipe()
 {
     echo  $this." <br>";
-    foreach ($this->_carriere as $carriere) 
+    foreach ($this->_carrieres as $carriere) 
     {
         echo $carriere."<br>";
     }
