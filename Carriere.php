@@ -1,6 +1,6 @@
 <?php
 
-class Cariere
+class Carriere
 {
     private Equipe $_equipe;
     private Joueur $_joueur;
@@ -11,8 +11,8 @@ public function __construct($equipe, $joueur,int $datedebut)
     $this->_equipe = $equipe;
     $this->_joueur = $joueur;
     $this->_datedebut = $datedebut;
-    $this->_equipe->addCariere($this);
-    $this->_joueur->addCariere($this);
+    $this->_equipe->addCarriere($this);
+    $this->_joueur->addCarriere($this);
 }
 
 
@@ -30,6 +30,12 @@ public function getDatedebut()
 {
     return $this->_datedebut;
 }
+
+public function getCarriere()
+{
+    return $this->_carriere;
+}
+
 
 
 
