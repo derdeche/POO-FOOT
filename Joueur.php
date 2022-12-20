@@ -18,7 +18,7 @@ class Joueur
         $this->_carrieres = [];
     }
 
-    public function addCarriere($carriere)
+    public function addCarriere(carriere $carriere)
     {
         $this->_carriere[] = $carriere;
     }
@@ -60,10 +60,10 @@ class Joueur
                                /*Function d'affichage information sur carriere joueur*/
     public function afficherInfo()
    {
-        $result=" ";
+        $result="";
        foreach ($this->_carrieres as $carriere)
        {
-        var_dump($carriere);
+        
         $result .="Le nom du Joueur: ".$carriere->getEquipe()." prénom: ".$carriere->getJoueur()."Age: ".$carriere->getDatedebut();
         
     }
