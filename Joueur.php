@@ -8,11 +8,11 @@ class Joueur
     private Pays $_pays;
     private array $_carrieres;
 
-    public function __construct(string $nom, string $prenom, string $dateNaissance, Pays $pays)
+    public function __construct(string $nom, string $prenom, string $dateNaissance, $pays)
     {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
-        $this->_dateNaissance = new datetime($dateNaissance);
+        $this->_dateNaissance = $dateNaissance;
         $this->_pays = $pays;
         $this->_pays->addJoueur($this);
         $this->_carrieres = [];
@@ -25,15 +25,15 @@ class Joueur
 
     public function getNom(): string
     {
-        return $this->_Nom;
+        return $this->_nom;
     }
 
     public function getPrenom(): string
     {
-        return $this->_Prenom;
+        return $this->_prenom;
     }
 
-    public function getDateNaissance(): string
+    public function getDateNaissance()
     {
         return $this->_DateNaissance;
     }
@@ -50,11 +50,13 @@ class Joueur
         $diff = date_diff($dateNaissance, $today);
         return $diff->format("%y ans ");
     }
-                                /* Mode affichege information joueur*/
+
+                                /* Mode affichage information joueur*/
     public function to__String()
     {
         return "Le nom du Joueur: ". $this->getNom()." prénom: ".$this->getPrenom()."Age: ".$this->afficherAge();
     } 
+
                                /*Function d'affichage information sur carriere joueur*/
     public function afficherInfo()
    {
