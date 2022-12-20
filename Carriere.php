@@ -36,6 +36,11 @@ public function getCarriere()
     return $this->_carriere;
 }
 
+public function __toString()
+{
+    return $this->getEquipe().$this->getJoueur().$this->getDatedebut();
+}
+
 
 
 
