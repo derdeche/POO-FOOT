@@ -56,6 +56,14 @@ class Joueur
         return "Le nom du Joueur: ". $this->getNom()." prénom: ".$this->getPrenom(). "Date de Naissance: ".$this->getdateNaisance()."Age: ".$this->_afficherAge();
     } 
 
+    public function afficherInfo()
+   {
+    echo "Le nom du Joueur: ".$this;
+    foreach ($this->_carrieres as $carriere)
+    {
+        return $carriere."<br>";
+    }
+   
 
 
 
