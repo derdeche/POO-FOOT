@@ -38,7 +38,7 @@ public function to__String()
 public function afficherEquipe()
 {
     echo " La listes des équipes du pays : ". $this." sont :<br>";
-    foreach ($this->_equipe as $equipe) 
+    foreach ($this->_equipes as $equipe) 
     {
         echo $equipe."<br>";
     }

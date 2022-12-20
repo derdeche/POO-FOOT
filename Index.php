@@ -23,12 +23,38 @@ Concevez le projet en POO de façon à :<br>
     <h2>Résultat</h2>
 
     <?php
+ 
+    spl_autoload_register(function ($class_name) {
 
-    require_once "Joueur.php";
-    require_once "Pays.php";
-    require_once "Equipe.php";
-    require_once "Carriere.php";
+    require_once $class_name . '.php';
+
+    });
+
+    $pays1 = new Pays("France");
+    $pays2 = new Pays("Espagne");
+    $pays3 = new Pays("Angleterre");
+
+    $equipe1 = new Equipe("Paris Saint-Germain","france");
+    $equipe2 = new Equipe("FC Barcelone","espagne");
+    $equipe3 = new Equipe("Liverpool", "Angleterre" );
 
     
+    $joueur1 = new joueur("Messi","lionel","24 juin 1987",$pays1,$carriere1);
+    $joueur2 = new joueur("Lewandowski","Robert","21 août 1988",$pays2,$carriere2);
+    $joueur3 = new joueur("Alcantara","Tiago","11 avril 1991",$pays3,$carriere3);
+    
+    $carriere1 = new Carriere("Paris Saint-Germain",$joueur1,2020);
+    $carriere2 = new Carriere("Fc Barcelone",$joueur2,2021);
+    $carriere3 = new Carriere("Liverpool",$joueur3,2019);
+
+    /*$joueur1->afficherInfo();*/
+
+    //$joueur1->afficherInfo();
+    $equipe1->afficherInfoEquipe();
+    
+ 
+
+
+
 
 
