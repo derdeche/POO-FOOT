@@ -4,23 +4,23 @@ class Joueur
 {
     private string $_nom;
     private string $_prenom;
-    private string $_dateNaissance;
+    private  dateTime $_dateNaissance;
     private Pays $_pays;
-    private array $_carrieres;
+    private array $_carriere;
 
-    public function __construct(string $nom, string $prenom, string $dateNaissance, $pays)
+    public function __construct(string $nom, string $prenom, $dateNaissance, $pays)
     {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
-        $this->_dateNaissance = $dateNaissance;
+        $this->_dateNaissance = new DateTime ($dateNaissance);
         $this->_pays = $pays;
         $this->_pays->addJoueur($this);
         $this->_carrieres = [];
     }
 
-    public function addCarriere($Carriere)
+    public function addCarriere($carriere)
     {
-        $this->_Carriere[] = $Carriere;
+        $this->_carriere[] = $carriere;
     }
 
     public function getNom(): string
@@ -35,7 +35,7 @@ class Joueur
 
     public function getDateNaissance()
     {
-        return $this->_DateNaissance;
+        return $this->_dateNaissance;
     }
 
     public function getPays(): string
@@ -46,9 +46,9 @@ class Joueur
     public function afficherAge()
     {
         $today= new DateTime();
-        $dateNaissance = ($this->_dateNaissance);
-        $diff = date_diff($dateNaissance, $today);
-        return $diff->format("%y ans ");
+        //$age = $today->diff($this->_dateNaissance)->y;
+        $age = $this->_dateNaissance->diff($today);
+        return $age->format("%y ans ");
     }
 
                                 /* Mode affichage information joueur*/
@@ -60,11 +60,14 @@ class Joueur
                                /*Function d'affichage information sur carriere joueur*/
     public function afficherInfo()
    {
-    echo "Le nom du Joueur: ".$this;
-    foreach ($this->_carrieres as $carriere)
-    {
-        return $carriere."<br>";
+        $result=" ";
+       foreach ($this->_carrieres as $carriere)
+       {
+        var_dump($carriere);
+        $result .="Le nom du Joueur: ".$carriere->getEquipe()." prénom: ".$carriere->getJoueur()."Age: ".$carriere->getDatedebut();
+        
     }
+    return  $result;
    
 
 }
