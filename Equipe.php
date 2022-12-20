@@ -7,12 +7,12 @@ class Equipe
     private array $_carriere;
 
 
-public function __construct(string $equipe, string $pays, array $carriere)
+public function __construct(string $equipe, string $pays)
 {
     $this->_equipe = $equipe;
     $this->_pays = $pays;
-    $this->_Pays->addJoueur($this);
-    $this->_carriere = [];
+    $this->_Pays->addEquipe($this);
+    $this->_carrieres = [];
 }
 
 public function addCariere(string $cariere) 
@@ -36,6 +36,21 @@ public function getCarriere()
     return $this->_carriere;
 }
 
+public function to__String() 
+{
+    return $this->_equipe;
+}
+           
+                      /*function permet d'afficher les informations d'une equipe*/
+
+public function afficherInfoEquipe()
+{
+    echo  $this." <br>";
+    foreach ($this->_carriere as $carriere) 
+    {
+        echo $carriere."<br>";
+    }
+}
 
 
 
