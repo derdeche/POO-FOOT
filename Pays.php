@@ -3,7 +3,7 @@
 class Pays 
 {
     private string $_pays;
-    private array $_equipes;
+    private array $_equipe;
 
 
 public function __construct(string $pays) 
