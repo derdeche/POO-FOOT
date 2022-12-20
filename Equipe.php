@@ -15,9 +15,9 @@ public function __construct(string $equipe, string $pays)
     $this->_carrieres = [];
 }
 
-public function addCariere(string $cariere) 
+public function addCarriere(string $carriere) 
 {
-    $this->_cariere[] = $cariere;
+    $this->_carriere[] = $carriere;
     return $this;
 }
 
@@ -38,7 +38,7 @@ public function getCarriere()
 
 public function to__String() 
 {
-    return $this->_equipe;
+    return $this->getEquipe().$this->getPays().$this->getCarriere();
 }
            
                       /*function permet d'afficher les informations d'une equipe*/
