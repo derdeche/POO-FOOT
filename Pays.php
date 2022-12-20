@@ -27,6 +27,13 @@ public function getEquipe()
 {
     return $this->_equipe;
 }
+
+
+public function to__String() 
+{
+    return $this->getPays().$this->getEquipe();
+}
+
                                  /*Function permet d'afficher les equipes d'un pays*/
 public function afficherEquipe()
 {
