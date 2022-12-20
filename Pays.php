@@ -12,10 +12,10 @@ public function __construct(string $pays)
     $this->_equipes = [];
 }
 
-public function addEquipe(string $equipe) 
+public function addEquipe(Equipe $equipe) 
 {
     $this->_equipe[] = $equipe;
-    return $this;
+    
 }
 
 public function getPays() 
