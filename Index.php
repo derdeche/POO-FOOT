@@ -31,23 +31,39 @@ spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
 });
 
-$pays1 = new Pays("France");
-$pays2 = new Pays("Espagne");
-$pays3 = new Pays("Angleterre");
+$pays1 = new Pays('France');
+$pays2 = new Pays('Espagne');
+$pays3 = new Pays('Angleterre');
 
-$equipe1 = new Equipe("Paris Saint-Germain", $pays1);
-$equipe2 = new Equipe("FC Barcelone", $pays2);
-$equipe3 = new Equipe("Liverpool", $pays3);
+$equipe1 = new Equipe(' Paris Saint-Germain', $pays1);
+$equipe2 = new Equipe(' FC Barcelone', $pays2);
+$equipe3 = new Equipe(' Liverpool', $pays3);
 
 
-$joueur1 = new joueur("Messi", "lionel", "24 juin 1987", $pays1);
-$joueur2 = new joueur("Lewandowski", "Robert", "21 août 1988", $pays2);
-$joueur3 = new joueur("Alcantara", "Tiago", "11 avril 1991", $pays3);
+$joueur1 = new joueur('Messi', 'lionel', '1987-06-24', $pays1);
+$joueur2 = new joueur('Lewandowski', ' Robert', '1988-08-21', $pays2);
+$joueur3 = new joueur('Alcantara', ' Tiago', '1991-08-11', $pays3);
 
-$carriere1 = new Carriere($equipe1, $joueur1, 2020);
-$carriere2 = new Carriere($equipe2, $joueur2, 2021);
-$carriere3 = new Carriere($equipe3, $joueur3, 2019);
+$carriere1 = new Carriere($equipe1, $joueur1,' 2020');
+$carriere2 = new Carriere($equipe2, $joueur2, ' 2021');
+$carriere3 = new Carriere($equipe3, $joueur3,' 2019');
 
+echo $joueur1."<br>";
+echo $joueur2."<br>";
+echo $joueur3."<br>";
+echo "************************************************************************************************"."<br>";
+echo "LISTE DES EQUIPES D'UN PAYS :"."<br>";
+$pays1->afficherEquipe(); 
+$pays2->afficherEquipe();
+$pays3->afficherEquipe();   
+echo "************************************************************************************************"."<br>";
+echo "LISTE DES JOUEURS D'UNE EQUIPE :"."<br>";
+echo $carriere1."<br>";
+echo $carriere2."<br>";
+echo $carriere3."<br>";
+echo "************************************************************************************************"."<br>";
+echo "LISTE DE TOUTES LES EQUIPES D'UN JOUEUR :"."<br>";
 $joueur1->afficherInfo();
+$joueur2->afficherInfo();
+$joueur3->afficherInfo();
 
-    //$carriere1->afficherInfoEquipe();
