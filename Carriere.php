@@ -2,11 +2,11 @@
 
 class Carriere
 {
-    private Equipe $_equipe;
-    private Joueur $_joueur;
+    private  Joueur $_joueur;
+    private  Equipe $_equipe;
     private int $_datedebut;
     
-public function __construct($equipe, $joueur,int $datedebut)
+public function __construct(Equipe $equipe,Joueur $joueur, $datedebut)
 {
     $this->_equipe = $equipe;
     $this->_joueur = $joueur;
@@ -35,10 +35,10 @@ public function getCarriere()
 {
     return $this->_carriere;
 }
-
+                            /*Function permet d'afficher les joueurs d'une équipe*/
 public function __toString()
 {
-    return $this->getEquipe().$this->getJoueur().$this->getDatedebut();
+    return " Equipe : " .$this->getEquipe()."//".$this->getJoueur()." ". "Date de Début : " . $this->getDatedebut();
 }
 
 
