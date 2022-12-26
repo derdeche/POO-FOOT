@@ -1,73 +1,76 @@
-<?php
+ <?php
 
 class Joueur
 {
     private string $_nom;
     private string $_prenom;
-    private  dateTime $_dateNaissance;
+    private  $_anniversaire;
     private Pays $_pays;
     private array $_carriere;
 
-    public function __construct(string $nom, string $prenom, $dateNaissance, $pays)
+    public function __construct(string $nom, string $prenom, $anniversaire,  pays $pays)
     {
         $this->_nom = $nom;
         $this->_prenom = $prenom;
-        $this->_dateNaissance = new DateTime ($dateNaissance);
+        $this->_anniversaire =  new DateTime ($anniversaire);
         $this->_pays = $pays;
-        $this->_pays->addJoueur($this);
         $this->_carrieres = [];
     }
 
-    public function addCarriere(carriere $carriere)
+    public function addCarriere($carriere)
     {
-        $this->_carriere[] = $carriere;
+        $this->_carrieres[] = $carriere;
     }
 
-    public function getNom(): string
+    public function getNom()
     {
         return $this->_nom;
     }
 
-    public function getPrenom(): string
+    public function getPrenom()
     {
         return $this->_prenom;
     }
-
-    public function getDateNaissance()
+ 
+    public function getAnniversaire()
     {
-        return $this->_dateNaissance;
+        return $this->_anniversaire;
     }
 
-    public function getPays(): string
+        public function getPays()
     {
         return $this->_Pays;
     }
 
-    public function afficherAge()
-    {
+    public function Age(){
         $today= new DateTime();
-        //$age = $today->diff($this->_dateNaissance)->y;
-        $age = $this->_dateNaissance->diff($today);
-        return $age->format("%y ans ");
+        $anniversaire = ($this->_anniversaire);
+        $diff = date_diff($anniversaire, $today);
+        return $diff->format("%y ans");
     }
+
+
+    
 
                                 /* Mode affichage information joueur*/
-    public function to__String()
+    public function __toString()
     {
-        return "Le nom du Joueur: ". $this->getNom()." prénom: ".$this->getPrenom()."Age: ".$this->afficherAge();
+        return " Nom du Joueur: ". $this->getNom(). " //"." Prénom: ".$this->getPrenom(). " //". " Age: ". $this->Age();
     } 
 
-                               /*Function d'affichage information sur carriere joueur*/
+                               /*Function d'affichage des equipes d'un joueur*/
     public function afficherInfo()
    {
-        $result="";
+       
+       /*echo "Nom du Joueur : ".$this->getNom()."<br>"." Prénom : ".$this->getPrenom()."<br>"." Age : ".$this->Age()."<br>";*/
+
        foreach ($this->_carrieres as $carriere)
        {
+           echo $carriere."<br>";
+       }
+   }
         
-        $result .="Le nom du Joueur: ".$carriere->getEquipe()." prénom: ".$carriere->getJoueur()."Age: ".$carriere->getDatedebut();
-        
-    }
-    return  $result;
+    
    
 
 }
@@ -110,5 +113,5 @@ class Joueur
 
 
 
-}
+
 
