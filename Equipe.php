@@ -2,7 +2,7 @@
 
 class Equipe
 {
-    private $_equipe;
+    private string $_equipe;
     private Pays $_pays;
     private array $_carriere;
 
@@ -11,11 +11,12 @@ public function __construct(string $equipe, Pays $pays)
 {
     $this->_equipe = $equipe;
     $this->_pays = $pays;
+    
     $this->_pays->addEquipe($this);
     $this->_carrieres = [];
 }
 
-public function addCarriere(Carriere $carriere) 
+public function addCarriere($carriere) 
 {
     $this->_carriere[] = $carriere;
     
@@ -36,9 +37,9 @@ public function getCarriere()
     return $this->_carriere;
 }
 
-public function to__String() 
+public function __toString() 
 {
-    return $this->getEquipe().$this->getPays().$this->getCarriere();
+    return $this->getEquipe();
 }
            
                       /*function permet d'afficher les informations d'une equipe*/
