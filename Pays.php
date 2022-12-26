@@ -3,18 +3,19 @@
 class Pays 
 {
     private string $_pays;
-    private array $_equipe;
+    private array $_carriere;
 
 
 public function __construct(string $pays) 
 {
     $this->_pays = $pays;
     $this->_equipes = [];
+    $this->_carrieres = [];
 }
 
-public function addEquipe(Equipe $equipe) 
+public function addEquipe($equipe) 
 {
-    $this->_equipe[] = $equipe;
+    $this->_equipes[] = $equipe;
     
 }
 
@@ -29,20 +30,28 @@ public function getEquipe()
 }
 
 
-public function to__String() 
+public function __toString() 
 {
-    return $this->getPays().$this->getEquipe();
+    return $this->getPays();
 }
 
+public function addCarriere($carriere)
+{
+    foreach($this->carrieres as $carriere)
+    {
+        return $carriere."<br>";
+    }
+}
                                  /*Function permet d'afficher les equipes d'un pays*/
 public function afficherEquipe()
 {
-    echo " La listes des équipes du pays : ". $this." sont :<br>";
+    echo " La liste des équipes du pays : ". $this." sont :<br>";
     foreach ($this->_equipes as $equipe) 
     {
         echo $equipe."<br>";
     }
 }
+
 
 
 
