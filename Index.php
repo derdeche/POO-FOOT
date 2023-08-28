@@ -34,10 +34,12 @@ spl_autoload_register(function ($class_name) {
 $pays1 = new Pays('France');
 $pays2 = new Pays('Espagne');
 $pays3 = new Pays('Angleterre');
+$pays4 = new Pays('USA');
 
 $equipe1 = new Equipe(' Paris Saint-Germain', $pays1);
 $equipe2 = new Equipe(' FC Barcelone', $pays2);
 $equipe3 = new Equipe(' Liverpool', $pays3);
+$equipe4 = new Equipe(' Miami', $pays4);
 
 
 $joueur1 = new joueur('Messi', 'lionel', '1987-06-24', $pays1);
@@ -47,6 +49,7 @@ $joueur3 = new joueur('Alcantara', ' Tiago', '1991-08-11', $pays3);
 $carriere1 = new Carriere($equipe1, $joueur1,' 2020');
 $carriere2 = new Carriere($equipe2, $joueur2, ' 2021');
 $carriere3 = new Carriere($equipe3, $joueur3,' 2019');
+$carriere4 = new Carriere($equipe4, $joueur1,' 2023');
 
 echo $joueur1."<br>";
 echo $joueur2."<br>";
@@ -61,6 +64,7 @@ echo "LISTE DES JOUEURS D'UNE EQUIPE :"."<br>";
 echo $carriere1."<br>";
 echo $carriere2."<br>";
 echo $carriere3."<br>";
+echo $carriere4."<br>";
 echo "************************************************************************************************"."<br>";
 echo "LISTE DE TOUTES LES EQUIPES D'UN JOUEUR :"."<br>";
 $joueur1->afficherInfo();
